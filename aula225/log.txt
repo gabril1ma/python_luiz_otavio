@@ -1,0 +1,4 @@
+ERROR: taligaad erro LogFileMixin
+Succes: lallalaa sucesso LogFileMixin
+ERROR: taligaad erro LogFileMixin
+Succes: lallalaa sucesso LogFileMixin
