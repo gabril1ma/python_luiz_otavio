@@ -2,7 +2,7 @@ from pathlib import Path
 
 LOG_FILE = Path(__file__).parent / "log.txt"
 
-class Log:
+class Log():
     def _log(self, msg):
         raise NotImplementedError("Implemente o metodo log")
     
