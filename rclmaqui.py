@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 import time
 import pandas as pd
 
@@ -49,7 +50,7 @@ def melhoresEmpresas():
         time.sleep(2)
 
 
-    df.to_csv('C:/Users/xxdav/Downloads/melhores_empresas.csv', index=False)
+    df.to_csv('melhores_empresas.csv', index=False)
 
 
 def pioresEmpresas():
@@ -84,7 +85,7 @@ def pioresEmpresas():
         navegador.execute_script("arguments[0].scrollIntoView();", caminho)
         moda.click()
         time.sleep(2)
-    df.to_csv('C:/Users/xxdav/Downloads/piores_empresas.csv', index=False)
+    df.to_csv('piores_empresas.csv', index=False)
 
 melhoresEmpresas()
 pioresEmpresas()
