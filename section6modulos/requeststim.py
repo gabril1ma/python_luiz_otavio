@@ -8,49 +8,16 @@ headers =  {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
 }
 
-#url = "https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/"
-#url = "https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina=2"
-#url = "https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={pag}"
-
-# criar um for que vai percorrer pelas paginas e vai pegar os dados das reclamações de cada pagina
-
-#response = requests.get(url, headers = headers, timeout=2)
-
-
-#parsed_html = BeautifulSoup(response.text, "html.parser")
-
-#print(response.text)
-#print(response.headers)
-#print(parsed_html.div.text)
-
-
-#print(parsed_html.div.text)
-
-#produtos = parsed_html.select_one("#__next > div.sc-1mzw716-0.fuvfGZ > div.sc-1mzw716-1.swJOp > div.wydd4i-0.bwxKmA > main > section.wydd4i-5.fUopBb > div.sc-fULWyA.IJAiG.xh9b9g-0.eiNA-DU > div.sc-1sm4sxr-0.cCZuGL")
-#teste = parsed_html.select_one("#__next > div.sc-1mzw716-0.fuvfGZ > div.sc-1mzw716-1.swJOp > div.wydd4i-0.bwxKmA > main > section.wydd4i-5.fUopBb > div.sc-hImiYT.golyQW.xh9b9g-0.eiNA-DU > div.sc-1sm4sxr-0.cCZuGL > div:nth-child(1)")
-
 
 titulos = []
 conteudo = []
 
-'''
-for i in range(2, 8):
 
-    url = f"https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={i}"
-    response = requests.get(url, headers = headers, timeout=2)
-    parsed_html = BeautifulSoup(response.text, "html.parser")
-
-    for j in range(1, 11):
-        teste = parsed_html.select_one(f"#__next > div.sc-1mzw716-0.fuvfGZ > div.sc-1mzw716-1.swJOp > div.wydd4i-0.bwxKmA > main > section.wydd4i-5.fUopBb > div.sc-hImiYT.golyQW.xh9b9g-0.eiNA-DU > div.sc-1sm4sxr-0.cCZuGL > div:nth-child({j})")
-        titulos.append(teste.h4.text)
-        conteudo.append(teste.p.text)
-
-'''
 
 # filtro padrão 
 
 for i in range(1, 51):
-    url = f"https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={i}&problema=0000000000000872"
+    url = f"https://www.reclameaqui.com.br/empresa/live-tim/lista-reclamacoes/?pagina={i}"
     response = requests.get(url, headers = headers)
     parsed_html = BeautifulSoup(response.text, "html.parser")
 
@@ -68,11 +35,10 @@ for i in range(1, 51):
             print("j", j)
             print("i", i)
 
-
 # filtro internet para computador
 
 for i in range(1, 51):
-    url = f"https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={i}&produto=0000000000000476"
+    url = f"https://www.reclameaqui.com.br/empresa/live-tim/lista-reclamacoes/?pagina={i}&produto=0000000000000476"
     response = requests.get(url, headers = headers)
     parsed_html = BeautifulSoup(response.text, "html.parser")
 
@@ -93,7 +59,7 @@ for i in range(1, 51):
  # filtro internet para casa
 
 for i in range(1, 51):
-    url = f"https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={i}&produto=0000000000000478"
+    url = f"https://www.reclameaqui.com.br/empresa/live-tim/lista-reclamacoes/?pagina{i}&produto=0000000000000478"
     response = requests.get(url, headers = headers)
     parsed_html = BeautifulSoup(response.text, "html.parser")
 
@@ -115,7 +81,7 @@ for i in range(1, 51):
 # filtro qualidade da internet para oi fibra
 
 for i in range(1, 51):
-    url = f"https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={i}&status=ANSWERED&problema=0000000000000872"
+    url = f"https://www.reclameaqui.com.br/empresa/live-tim/lista-reclamacoes/?pagina={i}&problema=0000000000000872"
     response = requests.get(url, headers = headers)
     parsed_html = BeautifulSoup(response.text, "html.parser")
 
@@ -135,7 +101,7 @@ for i in range(1, 51):
 
 # filtro qualidade da internet para oi fibra avaliadas
 for i in range(1, 51):
-    url = f"https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={i}&status=EVALUATED&problema=0000000000000872"
+    url = f"https://www.reclameaqui.com.br/empresa/live-tim/lista-reclamacoes/?pagina={i}&status=EVALUATED&problema=0000000000000872"
     response = requests.get(url, headers = headers)
     parsed_html = BeautifulSoup(response.text, "html.parser")
 
@@ -156,7 +122,7 @@ for i in range(1, 51):
 
 # filtro internet para casa oi fibra avaliadas
 for i in range(1, 51):
-    url = f"https://www.reclameaqui.com.br/empresa/oi-internet/lista-reclamacoes/?pagina={i}&status=EVALUATED&produto=0000000000000478"
+    url = f"https://www.reclameaqui.com.br/empresa/live-tim/lista-reclamacoes/?pagina={i}&status=EVALUATED&produto=0000000000000478"
     response = requests.get(url, headers = headers)
     parsed_html = BeautifulSoup(response.text, "html.parser")
 
@@ -181,11 +147,6 @@ df = pd.DataFrame({
     
 })
 
-
-
-
-
-
 for key, value in zip(titulos, conteudo):
     print(key)
     print("------------------------------------------------------")
@@ -196,11 +157,10 @@ for key, value in zip(titulos, conteudo):
 
 
 
-df.to_csv('oi.csv', index=False)
+df.to_csv('tim.csv', index=False)
 
 print(len(titulos))
 print(len(conteudo))
-
 
 
 
